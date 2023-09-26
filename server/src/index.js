@@ -5,10 +5,10 @@ const cors = require("cors"); // whitelisting my own computer to be able to do G
 app.use(express.json());
 app.use(cors());
 
-const db = require("../models");
+const db = require("../models/index");
 
 // Routers
-const postRouter = require("../routes/posts");
+const postRouter = require("../routes");
 app.use("/posts", postRouter);
 
 db.sequelize.sync().then(() => {
