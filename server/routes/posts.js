@@ -13,7 +13,6 @@ router.post("/", async (req, res) => {
   // POST request
 
   const post = req.body;
-  //post.title
   //post.text
   //post.username
 

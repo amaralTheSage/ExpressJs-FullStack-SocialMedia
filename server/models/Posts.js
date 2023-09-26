@@ -3,10 +3,6 @@
 
 module.exports = function (sequelize, DataTypes) {
   const Posts = sequelize.define("Posts", {
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     text: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
+const cors = require("cors"); // whitelisting my own computer to be able to do GET() requests
 
 app.use(express.json());
+app.use(cors());
 
 const db = require("../models");
 
