@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { Posts } = require("../models");
+const { Post } = require("../models/index");
 
 router.get("/", async (req, res) => {
   // GET request
 
-  const listOfPosts = await Posts.findAll();
+  const listOfPosts = await Post.findAll();
   res.json(listOfPosts);
 });
 
@@ -13,11 +13,13 @@ router.post("/", async (req, res) => {
   // POST request
 
   const post = req.body;
-  //post.text
-  //post.username
 
-  await Posts.create(post);
-  res.json(post);
+  await Post.create(post);
+
+  res.json({
+    message: 'Post created!',
+    post
+  });
 });
 
 module.exports = router;
