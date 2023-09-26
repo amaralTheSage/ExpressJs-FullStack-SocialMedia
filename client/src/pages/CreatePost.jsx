@@ -18,7 +18,6 @@ function CreatePost() {
 
   function onSubmit(data) {
     console.log(data);
-    useEffect({}, []);
     axios
       .post("http://localhost:3001/posts", data)
       .then(console.log("it worked"))
